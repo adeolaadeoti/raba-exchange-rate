@@ -1,0 +1,92 @@
+.converter {
+    grid-column: 3/13;
+    background-color: white;
+    padding: 5rem 3rem 2rem 5rem;
+    color: black;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+
+    @media only screen and (max-width: 37.5em) { // phone
+        flex-direction: column;
+    }
+
+    &__box {
+        flex-basis: 25%;
+
+        @media only screen and (max-width: 37.5em) { // phone
+            &:not(:last-child) {
+                margin-bottom: 5rem;
+            }
+        }
+
+        select {
+            background-color: lighten($primary-color, 35%);
+            padding: 1.2rem;
+            border: $primary-color solid 3px;
+            cursor: pointer;
+            outline: none;
+
+        }
+        &:nth-child(2) {
+            display: flex;
+            flex-direction: column;
+
+            .currency {
+                display: flex;
+                margin-bottom: 1.5rem;
+                .from {
+                    margin-right: 2rem;
+                }
+            }
+        }
+        &:nth-child(1) {
+            align-self: center;
+            @media only screen and (max-width: 37.5em) { // phone
+                align-self: flex-start;
+                p {
+                    width: 70%;
+                }
+            }
+        }
+
+        .swap-container {
+
+            button {
+                border: none;
+                font-size: 1rem;
+                letter-spacing: 1px;
+                padding: 2rem 4rem;
+                text-transform: uppercase;
+                background-color: $primary-color;
+                font-family: $secondary-font;
+                cursor: pointer;
+                margin-bottom: 1.5rem;
+                outline: none;
+            }
+        }
+
+        input {
+            @extend select;
+            cursor: text;
+            margin-bottom: 2rem;
+            outline: none;
+
+        }
+
+        .amount {
+            @extend .heading-2;
+            background-image: url('../img/svg/rate-vector.svg');
+            padding-bottom: 5rem;
+            background-repeat: no-repeat;
+            background-position-y: 54%;
+            
+            @media only screen and (max-width: 37.5em) { // phone
+                margin-top: 2rem;
+                background-position-y: 60%;
+            }
+        }
+    }
+
+}

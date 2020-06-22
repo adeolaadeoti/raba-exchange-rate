@@ -1,0 +1,143 @@
+.nav {
+    grid-column: 1/15;
+    display: flex;
+    align-items: center;
+
+    .brand-logo {
+        margin-right: auto;
+    }
+
+    .baseBox {
+        display: flex;
+        align-items: center;
+    }
+
+    .usd {
+        margin-left: 2rem;
+        padding: 1.2rem 5rem 1.2rem 2rem;
+        background-color: #fff;
+        color: black;
+        text-transform: uppercase;
+        font-size: 1rem;
+        background-image: url('../img/png/usa-flag.png');
+        background-repeat: no-repeat;
+        background-position: 68% 48%;
+
+    }
+}
+
+
+// hero
+.hero {
+    grid-column: 2/14;
+    display: flex;
+    align-items: center;
+
+    @media only screen and (max-width: 56.25em) { // tab-port
+        flex-direction: column;
+        &__heading {
+            br {
+                display: none;
+            }
+        }
+        &__rates {
+            margin-top: 3rem;
+        }
+    }
+
+    &__heading {
+        margin-right: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .date {
+        font-size: 1.4rem;
+        letter-spacing: 1px;
+        padding: 2rem 4rem;
+        text-transform: uppercase;
+        background-color: $primary-color;
+        color: #2C0DB5;
+        margin-top: 2rem;
+        font-family: $secondary-font;
+        align-self: flex-start;
+    }
+
+    &__rates {
+        width: 75rem;
+        overflow-x: hidden;
+        position: relative;
+
+        @media only screen and (max-width: 37.5em) { // phone
+            width: 55rem;
+        }
+        @media only screen and (max-width: 28.4375em) { // phone
+            width: 40rem;
+        }
+        @media only screen and (max-width: 22.5em) { // phone
+            width: 30rem;
+        }
+
+        &::before {
+            content: "";
+            display: block;
+            height: 100%;
+            width: 100%;
+            background-image: linear-gradient(to right, #2C0DB5 3%, rgba(#2C0DB5, 0) 25%);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        &::after {
+            content: "";
+            display: block;
+            height: 100%;
+            width: 100%;
+            background-image: linear-gradient(to left, #2C0DB5 3%, rgba(#2C0DB5, 0) 25%);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .table-wrapper {
+            display: flex;
+            animation: swipe 30s infinite alternate ease-in-out;
+            table {
+                border-spacing: 1rem;
+                border-collapse: separate;
+                margin-right: 1rem;
+                tr {
+                    
+                    th {
+                        text-transform: capitalize;
+                        color: #567DFD;
+                        text-align: left;
+                        padding-right: 1rem;
+                    }
+                    td {
+                        padding: 1rem 0;
+                        font-size: 1.3rem;
+
+                    }
+                    .code {
+                        color: $primary-color;
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+// animation
+@keyframes swipe {
+    from {
+        transform: translateX(15%);
+    }
+    to {
+        transform: translateX(-110%);
+    }
+}
